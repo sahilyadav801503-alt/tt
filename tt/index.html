@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tannu & Shahil ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+  background:radial-gradient(circle at top,#1a1a2e,#000);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* GLASS CARD */
+.card{
+  background:rgba(255,255,255,0.08);
+  border-radius:25px;
+  padding:30px;
+  margin:30px auto;
+  max-width:850px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 30px rgba(255,51,102,0.15);
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:3.5rem;
+  color:#ff5fa2;
+  text-shadow:0 0 25px rgba(255,95,162,0.8);
+}
+
+.hero p{
+  font-size:1.2rem;
+  opacity:0.85;
+  margin-top:15px;
+}
+
+/* TYPING */
+#typing{
+  margin-top:20px;
+  font-size:1.3rem;
+  color:#ffd6e8;
+  min-height:40px;
+}
+
+/* FALLING HEARTS */
+.heart{
+  position:fixed;
+  top:-20px;
+  font-size:18px;
+  color:#ff4d88;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(120vh);opacity:0}
+}
+
+/* TITLES */
+.title{
+  font-size:2.2rem;
+  margin-bottom:20px;
+  color:#ff82b2;
+}
+
+/* GALLERY */
+.gallery{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+}
+
+.gallery img{
+  width:260px;
+  border-radius:25px;
+  scroll-snap-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* TIMELINE */
+.timeline p{
+  margin:15px 0;
+  font-size:1.1rem;
+}
+
+/* SECRET NOTE */
+.note{
+  font-family:'cursive';
+  font-size:1.3rem;
+  line-height:1.8;
+  color:#ffe6f0;
+}
+
+/* BUTTON */
+button{
+  background:#ff4d88;
+  border:none;
+  border-radius:30px;
+  padding:14px 35px;
+  color:#fff;
+  font-size:1.1rem;
+  cursor:pointer;
+  margin-top:25px;
+  box-shadow:0 0 20px rgba(255,77,136,0.6);
+}
+
+/* LOCK */
+.lock{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:10;
+}
+
+.lock input{
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  margin-top:15px;
+}
+
+/* FINAL */
+.final{
+  text-align:center;
+  padding:80px 20px;
+  font-size:1.5rem;
+  color:#ffd1e6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+<div class="lock" id="lock">
+  <h2>🔐 A Page Made Only For Tannu</h2>
+  <p>Because some love is private ❤️</p>
+  <input type="password" id="pass" placeholder="Enter our secret">
+  <button onclick="unlock()">Enter 💕</button>
+</div>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Tannu ❤️</h1>
+  <p>In a world full of people, my heart chose you</p>
+  <div id="typing"></div>
+</div>
+
+<!-- LOVE CARD -->
+<div class="card">
+  <h2 class="title">💌 From My Heart</h2>
+  <p>
+    Tannu, this page exists because you exist in my life.  
+    Every color, every animation, every word —  
+    is placed here thinking about **you** 🌙✨  
+  </p>
+</div>
+
+<!-- GALLERY -->
+<div class="card">
+  <h2 class="title">📸 Moments I Treasure</h2>
+  <div class="gallery">
+    <img src="tannu1.jpg">
+    <img src="tannu2.jpg">
+    <img src="tannu3.jpg">
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div class="card">
+  <h2 class="title">🕯️ Our Story</h2>
+  <div class="timeline">
+    <p>✨ The first conversation that changed everything</p>
+    <p>💬 The talks that lasted longer than nights</p>
+    <p>❤️ The moment I knew — it’s you</p>
+    <p>🌙 Still writing our forever…</p>
+  </div>
+</div>
+
+<!-- SECRET NOTE -->
+<div class="card">
+  <h2 class="title">📜 A Secret Note</h2>
+  <div class="note">
+    If someday you feel low, remember —  
+    someone built an entire universe on a webpage  
+    just to see you smile 🥹❤️  
+  </div>
+</div>
+
+<!-- FINAL -->
+<div class="final">
+  🌹 This website doesn’t belong to the internet  
+  <br>It belongs to **Tannu**  
+  <br><br>
+  Made with infinite love by **Shahil** 💕
+</div>
+
+<script>
+/* PASSWORD */
+function unlock(){
+  if(document.getElementById("pass").value==="tannu"){
+    document.getElementById("lock").style.display="none";
+  }else{
+    alert("Wrong secret 😅");
+  }
+}
+
+/* TYPING */
+const text="Shahil loves you more than words can ever say ❤️";
+let i=0;
+setInterval(()=>{
+  if(i<text.length){
+    document.getElementById("typing").innerHTML+=text[i];
+    i++;
+  }
+},100);
+
+/* HEARTS */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(4+Math.random()*4)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8000);
+},350);
+</script>
+
+</body>
+</html>
